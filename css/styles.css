@@ -16,6 +16,28 @@ body, input{
     background-color: rgb(61, 61, 61);
     overflow: hidden;
 }
+.contenedor::before{
+    content: '';
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background: linear-gradient(-65deg, black , grey);
+    top: -10%;
+    right: 55%;
+    /* Para mover en reversa el ciculo grande */
+    transform: translateY(-50%);
+}
+.registro{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .formularioContenedor{
     position: absolute;
     width: 100%;
@@ -29,6 +51,17 @@ form{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0 5rem;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+form.registroEntrada{
+    z-index: 2;
+}
+form.registroSalida{
+    z-index: 1;
+    opacity: 0;
 }
 .titulo{
     font-size: 2.2rem;
