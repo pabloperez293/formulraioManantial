@@ -25,17 +25,22 @@ body, input{
     background: linear-gradient(-65deg, black , grey);
     top: -10%;
     right: 55%;
+    transition: 1.8s ease-in-out;
     /* Para mover en reversa el ciculo grande */
     transform: translateY(-50%);
+    z-index: 6;
 }
+/* signin-signup */
 .registro{
     position: absolute;
     top: 50%;
     left: 75%;
     transform: translate(-50%, -50%);
     width: 50%;
+    transition: 1s 0.5s ease-in-out;
     display: grid;
     grid-template-columns: 1fr;
+    z-index: 5;
 }
 
 .formularioContenedor{
@@ -45,23 +50,22 @@ body, input{
     top: 0;
     left: 0;
 }
-
 form{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 5rem;
+    padding: 0rem 5rem;
     overflow: hidden;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
 form.registroEntrada{
-    z-index: 2;
+    opacity: 0;
+    z-index: 1;
 }
 form.registroSalida{
-    z-index: 1;
-    opacity: 0;
+    z-index: 2;
 }
 .titulo{
     font-size: 2.2rem;
@@ -78,11 +82,13 @@ form.registroSalida{
     display: grid;
     grid-template-columns: 15% 85%;
     padding: 0 .4rem;
+    position: relative;
 }
 .entradaCampos i{
     text-align: center;
     line-height: 50px;
     color: grey;
+    transition: 0.5s;
     font-size: 1.1rem;
 }
 .entradaCampos input{
@@ -141,4 +147,62 @@ form.registroSalida{
 .socialIcon:hover{
     color: rgba(238, 69, 57, 0.647);
     border-color:rgba(238, 69, 57, 0.647);
+}
+/* Paneles y imagenes */
+.panelesContenedor{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.paneles{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    text-align: center;
+    z-index: 6;
+}
+.izquierdoPanel{
+    pointer-events: all;
+    padding: 3rem 20% 2rem 15%;
+}
+.derechoPanel{
+    pointer-events: none;
+    padding: 3rem 15% 2rem 20%;
+}
+.paneles .contenido{
+    color: #fff;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.6s;
+}
+.paneles h3{
+    font-weight: 550;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+.paneles p{
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+}
+.btn.transparente{
+    margin: 0;
+    background: none;
+    border: 2px solid white;
+    width: 130px;
+    height: 40px;
+    font-weight: 550;
+    font-size: 0.8rem;
+}
+.imagen{
+    width: 100%;
+    transition: transform 1.1s ease-in-out;
+    transition-delay: 0.4s;
+}
+.izquierdoPanel .imagen .izquierdoPanel .contenido{
+    transform: translateX(800px);
 }
