@@ -32,7 +32,7 @@ input {
 
 .content {
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para resaltar */
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo semitransparente para resaltar */
   border-radius: 10px;
 }
 
